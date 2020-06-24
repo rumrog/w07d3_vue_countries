@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <h1>Countries</h1>
   </div>
 </template>
 
@@ -8,6 +8,17 @@
 
 export default {
   name: 'App',
+  data(){
+    return {
+      countries: [],
+      selectedContry: null
+    };
+  },
+  mounted(){
+    fetch('https://restcountries.eu/rest/v2/all')
+    .then(res => res.json())
+    .then(countries => this.countries = countries)
+  },
   components: {
   }
 }
