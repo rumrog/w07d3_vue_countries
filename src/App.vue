@@ -2,6 +2,7 @@
   <div id="app">
     <h1>Countries</h1>
     <countries-list :countries='countries'></countries-list>
+    <country-detail :country='selectedCountry'></country-detail>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
   data(){
     return {
       countries: [],
-      selectedContry: null
+      selectedCountry: null
     };
   },
   mounted(){
@@ -25,7 +26,9 @@ export default {
     .then(countries => this.countries = countries)
 
     eventBus.$on('country-selected', (country) => {
-      this.selectedContry = country
+      console.log(country.name);
+      
+      this.selectedCountry = country
     })
   },
   components: {
