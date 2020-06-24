@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import CountryDetail from './components/CountryDetail.vue'
 import CountriesList from './components/CountriesList.vue'
 import ListComponent from './components/ListComponent.vue'
 import {eventBus} from './main.js'
@@ -28,8 +29,8 @@ export default {
     })
   },
   components: {
-    "countries-list": CountriesList
-    // "country-detail": CountryDetail
+    "countries-list": CountriesList,
+    "country-detail": CountryDetail
   }
 }
 </script>
@@ -42,5 +43,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+li {
+  list-style-type: none;
 }
 </style>
